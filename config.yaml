@@ -1,0 +1,10 @@
+# Path to the data
+path: /opt/ml/input/data
+
+# Dataset directories
+train: train
+val: val
+
+# Classes
+names:
+  0: smoke
