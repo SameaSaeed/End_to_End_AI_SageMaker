@@ -91,6 +91,17 @@ python deploy.py --model-artifact s3://bucket/model.tar.gz --endpoint-name my-en
 python predict.py --endpoint-name my-endpoint --input data/sample_input.json
 ```
 
+### Example E2E Pipeline Command
+
+```bash
+python pipeline.py
+```
+### Example Invoke Endpoint Command
+
+```bash
+python invoke_lambda_endpoint.py 
+```
+
 ## Configuration
 
 The repository uses YAML or JSON configuration files to specify key parameters such as:
