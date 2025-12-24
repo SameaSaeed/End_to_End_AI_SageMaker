@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **End_to_End_AI_SageMaker** repository provides a complete workflow for building, training, deploying, and monitoring machine learning models using Amazon SageMaker. It streamlines the process of ML experimentation, automates deployment, and ensures scalable, production-ready solutions in the AWS ecosystem. The project is ideal for users seeking to leverage SageMaker’s powerful features with minimal setup.
+This setup integrates multiple AWS services (SageMaker, Lambda, API Gateway) to automate the training and deployment of an object detection model and expose it via a REST API for real-time inference. Make sure to replace all placeholders like your-sagemaker-role, your-bucket, your-processing-image-uri, your-model-image-uri, and API Gateway URLs with your actual values.
 
 ## Features
 
@@ -98,8 +98,23 @@ python pipeline.py
 ```
 ### Example Invoke Endpoint Command
 
+Create a new REST API in API Gateway:
+1. In the API Gateway Console, create a new REST API.
+2. Create a new resource (e.g., /object-detection).
+3. Create a new POST method for the resource.
+4. Set the Integration Type to Lambda Function and select the lambda_invoke_model.py function.
+
+Deploy the API:
+1. In API Gateway, click on Actions > Deploy API.
+2. Select the deployment stage (e.g., prod).
+3. Save and note the Invoke URL for your API.
+
+Send a POST request to the API Gateway endpoint:
+
 ```bash
-python invoke_lambda_endpoint.py 
+curl -X POST "https://your-api-id.execute-api.us-west-2.amazonaws.com/prod/object-detection" \
+-H "Content-Type: application/json" \
+-d '{"input_data": {"image": "base64-encoded-image"}}'
 ```
 
 ## Configuration
