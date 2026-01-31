@@ -140,4 +140,4 @@ Contributions are welcome! To contribute:
 
 ---
 
-We welcome feedback and suggestions to improve this project. Please open issues for bugs, feature requests, or general inquiries. Thank you for your interest in End_to_End_AI_SageMaker!
+Feedback and suggestions are welcomed to improve this project. Please open issues for bugs, feature requests, or general inquiries. Thank you for your interest in End_to_End_AI_SageMaker!
